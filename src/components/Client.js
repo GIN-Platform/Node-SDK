@@ -6,6 +6,7 @@ import NotFoundError from "../errors/NotFoundError";
 import BlockchainsFacade from "./facades/BlockchainsFacade";
 import NodesFacade from "./facades/NodesFacade";
 import UserFacade from "./facades/UserFacade";
+import Bottleneck from "bottleneck";
 
 const apiUrl = process.env.GIN_PLATFORM_API_URL || 'https://api.ginplatform.io';
 
@@ -28,6 +29,11 @@ const handleError = async (response) => {
     }
 };
 
+const rateLimiter = new Bottleneck({
+    minTime: 500,
+    maxConcurrent: 2
+});
+
 export default class Client {
     constructor(options) {
         this.apiKey = options.apiKey;
@@ -46,7 +52,7 @@ export default class Client {
             options.body = JSON.stringify(data);
         }
 
-        return fetch(apiUrl + endpoint, options).then(handleError);
+        return rateLimiter.schedule(() => fetch(apiUrl + endpoint, options)).then(handleError);
     }
     
     get(endpoint) {

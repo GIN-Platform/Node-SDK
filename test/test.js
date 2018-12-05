@@ -69,4 +69,21 @@ describe('Sanity tests', () => {
             assert(client.user instanceof UserFacade);
         });
     });
+    
+    describe('Rate limiting', () => {
+        const client = sdk.getClient();
+        
+        it('should work after a while instead of being rate limited', async () => {
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+            assert(Array.isArray(await client.request('/blockchains')));
+        }).timeout(30 * 1000);
+    });
 });

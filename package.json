@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bottleneck": "^2.13.2",
     "node-fetch": "^2.3.0",
     "uuid-validate": "0.0.3"
   },
