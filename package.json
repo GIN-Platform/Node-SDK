@@ -4,7 +4,7 @@
   "description": "SDK for the GIN Platform REST API",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d dist && cp -f package.json dist/package.json",
+    "build": "babel src -d dist && cp -f {package.json,README.md} dist/",
     "distrib": "npm publish dist",
     "test": "mocha --compilers js:babel-core/register"
   },

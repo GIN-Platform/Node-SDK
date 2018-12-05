@@ -25,6 +25,7 @@ await client.blockchains.get('gincoin') //get the gincoin blockchain
 await client.nodes.list() //get all my nodes
 await client.nodes.get('replace-with-node-id') //get all my nodes
 await client.nodes.create({ blockchain: 'gincoin', collateral: 1000, txid: 'tx-id-here', dedicated: true }) //create a node
+await client.nodes.update('replace-with-node-id', { meta: { key1: 'value1' } }) //update a node
 await client.nodes.delete('replace-with-node-id') //delete a node
 
 await client.user.get() //get current user's details
