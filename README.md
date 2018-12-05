@@ -1,8 +1,10 @@
-GIN Platform API Node.js SDK
-============================
+# GIN Platform API Node.js SDK
 
-Usage
------
+[![Downloads][npm-downloads]][npm-url]
+[![version][npm-version]][npm-url]
+[![License][npm-license]][license-url]
+
+## Usage
 
 The package is available in the npm registry:
 
@@ -39,8 +41,8 @@ const Sdk = require('gin-platform-node-sdk').Sdk;
 const sdk = new Sdk();
 ```
 
-Developement
-------------
+## Developement
+
 Requirements:
 
 - Node.js >= 8
