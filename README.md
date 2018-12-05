@@ -68,3 +68,10 @@ Build NPM package:
 npm run build #the distribution should be produced in the /dist directory
 npm run distrib #will upload the contents of /dist to the npm registry
 ```
+
+[license-url]: https://github.com/GIN-Platform/Node-SDK/blob/master/LICENSE
+
+[npm-url]: https://www.npmjs.com/package/gin-platform-node-sdk
+[npm-license]: https://img.shields.io/npm/l/gin-platform-node-sdk.svg?style=flat
+[npm-version]: https://img.shields.io/npm/v/gin-platform-node-sdk.svg?style=flat
+[npm-downloads]: https://img.shields.io/npm/dm/gin-platform-node-sdk.svg?style=flat
