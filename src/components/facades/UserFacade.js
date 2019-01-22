@@ -5,7 +5,7 @@ export default class UserFacade {
         this.client = client;
     }
 
-    get(id) {
+    get() {
         return this.client.get(`${endpoint}`);
     }
     
